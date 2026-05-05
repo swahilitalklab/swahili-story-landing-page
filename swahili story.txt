@@ -397,7 +397,15 @@
       <div class="signup-box">
         <h2 class="section-title">Get Your Free Swahili Story Pack</h2>
         <p class="signup-hint">You'll receive an email with your A1 story, audio, and practice tasks.</p>
-
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2319073');
+</script>
+<!-- End MailerLite Universal -->
         <!-- MailerLite embedded form — replace action URL with your MailerLite form URL -->
         <form
           class="signup-form"
