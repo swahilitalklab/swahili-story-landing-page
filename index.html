@@ -1,335 +1,677 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Learn Swahili Through Stories | Free Beginner Audio + Speaking Practice | Swahili TalkLab</title>
-
-  <meta name="description" content="Learn beginner Swahili through short stories, native audio, and speaking practice. Get a free A1–A2 story pack instantly.">
-
-  <!-- GOOGLE ANALYTICS (PASTE YOUR ID HERE) -->
-  <!-- Replace G-MQKS0C85S8 with your real Measurement ID -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-MQKS0C85S8"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-MQKS0C85S8');
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SwahiliTalkLab – Learn Swahili Through Reading & Listening</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,600;1,600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-  <!-- MAILERLITE -->
-  <script>
-    (function(w,d,e,u,f,l,n){
-      w[f]=w[f]||function(){
-        (w[f].q=w[f].q||[]).push(arguments);
-      };
-      l=d.createElement(e);
-      l.async=1;
-      l.src=u;
-      n=d.getElementsByTagName(e)[0];
-      n.parentNode.insertBefore(l,n);
-    })(window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-
-    ml('account', '2319073');
-  </script>
+  <!-- === GOOGLE ANALYTICS: G-MQKS0C85S8 === -->
+  <!-- === G-MQKS0C85S8 === -->
 
   <style>
     :root {
-      --clay:#C1440E;
-      --clay-dk:#9E3509;
-      --cream:#FBF6EE;
-      --cream2:#F2E9DA;
-      --ink:#1A1108;
-      --ink2:#5C4A38;
-      --border:#DDD0BC;
-      --sage:#4A6741;
-      --r:10px;
-      --fh:'Lora',serif;
-      --fb:'Inter',sans-serif;
+      --cream: #FAF8F4;
+      --white: #FFFFFF;
+      --sand: #F0EBE1;
+      --earth: #8B6E4E;
+      --deep: #2C2016;
+      --text: #3A2E22;
+      --muted: #8A7F74;
+      --accent: #3D7A5E;
+      --accent-light: #EAF3EE;
+      --accent-hover: #2F5F49;
+      --border: #E8E2D8;
+      --font-display: 'Lora', Georgia, serif;
+      --font-body: 'DM Sans', system-ui, sans-serif;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --shadow-soft: 0 2px 16px rgba(44,32,22,0.07);
     }
 
-    * { box-sizing:border-box; margin:0; padding:0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
-      font-family:var(--fb);
-      background:var(--cream);
-      color:var(--ink);
-      line-height:1.6;
+      font-family: var(--font-body);
+      background: var(--cream);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .wrap { max-width:720px; margin:0 auto; padding:0 20px; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 72px 0; }
+
+    /* NAV */
     nav {
-      display:flex;
-      justify-content:space-between;
-      padding:14px 20px;
-      border-bottom:1px solid var(--border);
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
     }
 
-    .logo {
-      font-family:var(--fh);
-      text-decoration:none;
-      color:var(--ink);
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 58px;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 24px;
     }
 
-    .logo span { color:var(--clay); }
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--deep);
+    }
 
+    .nav-logo span { color: var(--accent); }
+
+    .nav-cta {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
+      padding: 6px 16px;
+      border-radius: var(--radius-sm);
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover { background: var(--accent-light); text-decoration: none; }
+
+    /* HERO */
     .hero {
-      text-align:center;
-      padding:60px 20px 40px;
-      border-bottom:1px solid var(--border);
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 72px 0 64px;
     }
 
-    .tag {
-      display:inline-block;
-      font-size:12px;
-      padding:4px 10px;
-      background:rgba(193,68,14,0.1);
-      color:var(--clay);
-      border-radius:100px;
-      margin-bottom:14px;
+    /* EDIT: Main headline */
+    .hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      font-weight: 600;
+      color: var(--deep);
+      line-height: 1.25;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
     }
 
-    h1 {
-      font-family:var(--fh);
-      font-size:clamp(1.8rem,4vw,2.4rem);
-      line-height:1.2;
-      margin-bottom:14px;
+    /* EDIT: Subheadline */
+    .hero-sub {
+      font-size: 1.0625rem;
+      color: var(--text);
+      font-weight: 300;
+      line-height: 1.65;
+      max-width: 560px;
+      margin-bottom: 28px;
     }
 
-    h1 em { color:var(--clay); }
-
-    .sub {
-      color:var(--ink2);
-      max-width:520px;
-      margin:0 auto 20px;
+    /* Free sample list */
+    .sample-list {
+      background: var(--sand);
+      border-radius: var(--radius-md);
+      padding: 18px 22px;
+      margin-bottom: 32px;
+      max-width: 480px;
     }
 
-    .points {
-      font-size:14px;
-      color:var(--ink2);
-      margin-bottom:24px;
+    .sample-list-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--earth);
+      margin-bottom: 10px;
     }
 
-    .proof {
-      background:var(--cream2);
-      text-align:center;
-      padding:12px;
-      font-size:13px;
-      border-bottom:1px solid var(--border);
+    .sample-list ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+
+    .sample-list li {
+      font-size: 0.9375rem;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 9px;
     }
 
-    .section {
-      padding:50px 20px;
+    .sample-list li::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      flex-shrink: 0;
     }
 
-    .title {
-      font-family:var(--fh);
-      font-size:20px;
-      margin-bottom:10px;
+    /* MailerLite wrapper */
+    .hero-form-wrap { max-width: 480px; }
+
+    .hero-form-note {
+      font-size: 0.8125rem;
+      color: var(--muted);
+      margin-top: 10px;
+      line-height: 1.5;
     }
 
-    .subtitle {
-      color:var(--ink2);
-      font-size:14px;
-      margin-bottom:18px;
+    /* Sample preview — no fake browser chrome */
+    .hero-sample {
+      margin-top: 48px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
     }
 
-    .card {
-      background:#fff;
-      border:1px solid var(--border);
-      border-radius:12px;
-      overflow:hidden;
+    .hero-sample-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 14px;
     }
 
-    .card-top {
-      padding:18px;
-      border-bottom:1px solid var(--border);
+    .story-card {
+      background: var(--sand);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      max-width: 560px;
     }
 
-    .level {
-      font-size:11px;
-      color:var(--clay);
-      background:rgba(193,68,14,0.08);
-      display:inline-block;
-      padding:3px 8px;
-      border-radius:100px;
-      margin-bottom:10px;
+    .story-card-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--deep);
+      margin-bottom: 10px;
     }
 
-    .story {
-      font-family:var(--fh);
-      margin-bottom:8px;
+    .story-card-text {
+      font-size: 0.9375rem;
+      line-height: 1.75;
+      color: var(--text);
+      margin-bottom: 16px;
     }
 
-    .translation {
-      font-size:13px;
-      color:var(--ink2);
-      font-style:italic;
-      margin-bottom:12px;
+    .story-card-text .hl {
+      background: #FFF3C4;
+      padding: 1px 3px;
+      border-radius: 3px;
     }
 
-    .tasks {
-      padding:18px;
-      background:var(--cream);
+    /* Minimal audio UI */
+    .audio-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+      margin-bottom: 14px;
     }
 
-    .tasks li {
-      font-size:13px;
-      margin-bottom:8px;
-      list-style:none;
+    .play-btn {
+      width: 32px; height: 32px;
+      background: var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
     }
 
-    .tasks li::before {
-      content:"✓ ";
-      color:var(--sage);
+    .play-btn svg { width: 12px; height: 12px; fill: white; margin-left: 2px; }
+
+    .audio-bar {
+      flex: 1; height: 3px;
+      background: var(--border);
+      border-radius: 2px;
+      overflow: hidden;
     }
 
-    .how {
-      background:var(--cream2);
+    .audio-fill { height: 100%; width: 35%; background: var(--accent); }
+    .audio-time { font-size: 0.75rem; color: var(--muted); }
+
+    /* Exercise preview */
+    .ex-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      font-weight: 500;
+      margin-bottom: 7px;
     }
 
-    .step {
-      margin-bottom:14px;
+    .ex-q { font-size: 0.875rem; color: var(--text); margin-bottom: 8px; }
+
+    .ex-opts { display: flex; flex-direction: column; gap: 5px; }
+
+    .ex-opt {
+      font-size: 0.875rem;
+      padding: 6px 11px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      color: var(--text);
+      background: var(--white);
     }
 
-    .step h3 {
-      font-size:14px;
-      margin-bottom:4px;
+    .ex-opt.correct {
+      border-color: var(--accent);
+      background: var(--accent-light);
+      color: var(--accent);
+      font-weight: 500;
     }
 
-    .step p {
-      font-size:13px;
-      color:var(--ink2);
+    /* WHAT'S INCLUDED */
+    .features { background: var(--cream); }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.4rem, 3vw, 1.875rem);
+      font-weight: 600;
+      color: var(--deep);
+      letter-spacing: -0.02em;
+      margin-bottom: 8px;
     }
 
-    .final {
-      background:var(--ink);
-      color:#fff;
-      text-align:center;
-      padding:60px 20px;
+    .section-sub {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 36px;
     }
 
-    .final h2 {
-      font-family:var(--fh);
-      margin-bottom:10px;
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
     }
 
-    .final p {
-      opacity:0.7;
-      margin-bottom:20px;
+    .feature-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 26px;
+      box-shadow: var(--shadow-soft);
     }
 
-    /* MAILERLITE CLEAN */
-    .ml-embedded {
-      max-width:420px;
-      margin:0 auto;
+    .feature-icon { font-size: 1.375rem; margin-bottom: 12px; }
+
+    .feature-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--deep);
+      margin-bottom: 7px;
     }
+
+    .feature-desc { font-size: 0.9375rem; color: var(--muted); line-height: 1.6; }
+
+    /* HOW IT WORKS */
+    .how-it-works {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 36px;
+    }
+
+    .step { text-align: center; padding: 24px 16px; }
+
+    .step-number {
+      width: 44px; height: 44px;
+      background: var(--accent);
+      color: white;
+      font-family: var(--font-display);
+      font-size: 1.125rem;
+      font-weight: 600;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 14px;
+    }
+
+    .step-title {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--deep);
+      margin-bottom: 8px;
+    }
+
+    .step-desc { font-size: 0.9375rem; color: var(--muted); line-height: 1.6; }
+
+    /* PAYHIP */
+    .payhip {
+      background: var(--sand);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .payhip .section-heading { margin-bottom: 14px; }
+
+    .payhip p {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin: 0 auto 32px;
+      line-height: 1.65;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 32px;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      border: none;
+      text-decoration: none;
+    }
+
+    .btn-primary { background: var(--accent); color: white; }
+
+    .btn-primary:hover {
+      background: var(--accent-hover);
+      text-decoration: none;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(61,122,94,0.25);
+    }
+
+    /* CONTACT */
+    .contact {
+      background: var(--white);
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .contact p { font-size: 0.9375rem; color: var(--muted); margin-bottom: 28px; }
+
+    .contact-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9375rem;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    .contact-icon {
+      width: 34px; height: 34px;
+      background: var(--accent-light);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--deep);
+      color: rgba(250,248,244,0.45);
+      text-align: center;
+      padding: 28px 24px;
+      font-size: 0.8125rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 640px) {
+      section { padding: 56px 0; }
+      .hero { padding: 52px 0 48px; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; gap: 12px; }
+    }
+
+    /* FADE-UP */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .fade-up.visible { opacity: 1; transform: none; }
   </style>
 </head>
 
 <body>
 
-<nav>
-  <a class="logo" href="#"><span>Swahili</span> TalkLab</a>
-</nav>
-
-<section class="hero">
-  <div class="wrap">
-    <div class="tag">Free Swahili Story Pack</div>
-
-    <h1>
-      Stop Memorising Words. Start <em>Speaking Swahili</em>.
-    </h1>
-
-    <p class="sub">
-      Learn Swahili through short stories, audio, and guided speaking practice designed for complete beginners.
-    </p>
-
-    <div class="points">
-      Stories + Audio + Speaking Practice (A1–A2)
+  <!-- NAV -->
+  <nav>
+    <div class="nav-inner">
+      <div class="nav-logo">Swahili<span>Talk</span>Lab</div>
+      <!-- EDIT: Replace # with your Payhip URL -->
+      <a href="#" class="nav-cta">Get full resource</a>
     </div>
+  </nav>
 
-    <!-- MAILERLITE FORM -->
-    <div class="ml-embedded" data-form="WiJv8t"></div>
+  <!-- ===========================
+       HERO
+       EDIT: headline, subtext, sample list items
+  =========================== -->
+  <section class="hero">
+    <div class="container">
 
-  </div>
-</section>
+      <!-- EDIT: Main headline -->
+      <h1>Learn Swahili Through Reading &amp; Listening</h1>
 
-<div class="proof">
-  Used by beginners, diaspora learners, and professionals in East Africa
-</div>
+      <!-- EDIT: Subheadline -->
+      <p class="hero-sub">Beginner-friendly Swahili stories with audio, exercises, and guided reading practice for A1 learners, self-study students, and teachers.</p>
 
-<section class="section">
-  <div class="wrap">
+      <!-- EDIT: Free sample contents -->
+      <div class="sample-list">
+        <div class="sample-list-label">Free sample includes</div>
+        <ul>
+          <li>1 A1 beginner story</li>
+          <li>1 A2 story</li>
+          <li>Audio narration for each story</li>
+          <li>Reading comprehension exercises</li>
+          <li>Listening practice activities</li>
+        </ul>
+      </div>
 
-    <div class="title">What you actually get</div>
-    <div class="subtitle">A simple learning system, not textbook drills</div>
+      <!-- === MAILERLITE FORM (REAL — connected to your account) === -->
+      <div class="hero-form-wrap">
+        <div class="ml-embedded" data-form="WiJv8t"></div>
+        <!-- MailerLite Universal -->
+        <script>
+          (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+          .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+          n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+          (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+          ml('account', '2319073');
+        </script>
+        <!-- === END MAILERLITE FORM === -->
+        <p class="hero-form-note">Enter your email to receive the free sample stories and audio directly in your inbox. No spam.</p>
+      </div>
 
-    <div class="card">
-      <div class="card-top">
-        <div class="level">A1 Beginner</div>
+      <!-- Story sample — clean, no fake browser chrome -->
+      <div class="hero-sample">
+        <div class="hero-sample-label">Sample from the resource</div>
+        <div class="story-card">
+          <!-- EDIT: Sample story title and text -->
+          <div class="story-card-title">Soko la Asubuhi — A1 Story</div>
+          <p class="story-card-text">
+            Amina anaenda <span class="hl">sokoni</span> kila asubuhi. Yeye ananunua <span class="hl">matunda</span> na mboga. Leo, anaongea na mama mmoja ambaye anauza <span class="hl">ndizi</span>.
+          </p>
 
-        <div class="story">Juma anaenda shuleni kila siku.</div>
+          <div class="audio-row">
+            <div class="play-btn">
+              <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+            </div>
+            <div class="audio-bar"><div class="audio-fill"></div></div>
+            <span class="audio-time">0:38</span>
+          </div>
 
-        <div class="translation">Juma goes to school every day.</div>
-
-        <div class="translation">
-          Vocabulary: anaenda = goes, kila siku = every day
+          <div class="ex-label">Exercise 1</div>
+          <div class="ex-q">Where does Amina go every morning?</div>
+          <div class="ex-opts">
+            <div class="ex-opt">To the school</div>
+            <div class="ex-opt correct">✓ To the market</div>
+            <div class="ex-opt">To the hospital</div>
+          </div>
         </div>
       </div>
 
-      <ul class="tasks">
-        <li>Listen and repeat aloud</li>
-        <li>Say the sentence without reading</li>
-        <li>Answer simple questions in Swahili</li>
-        <li>Build your own sentence</li>
-      </ul>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ===========================
+       WHAT'S INCLUDED
+       EDIT: feature titles and descriptions
+  =========================== -->
+  <section class="features" id="what-you-get">
+    <div class="container">
+      <p class="section-heading fade-up">What's included</p>
+      <p class="section-sub fade-up">Each story is a complete learning unit.</p>
 
-<section class="section how">
-  <div class="wrap">
+      <div class="features-grid">
+        <div class="feature-card fade-up">
+          <div class="feature-icon">📖</div>
+          <div class="feature-title">Short Swahili Stories</div>
+          <p class="feature-desc">Beginner-friendly stories written for A1 learners. Simple vocabulary, clear sentences, familiar everyday situations.</p>
+        </div>
 
-    <div class="title">How it works</div>
+        <div class="feature-card fade-up">
+          <div class="feature-icon">🔊</div>
+          <div class="feature-title">Audio Narration</div>
+          <p class="feature-desc">Every story includes audio so learners can listen while reading and hear natural Swahili pronunciation.</p>
+        </div>
 
-    <div class="step">
-      <h3>1. Read a short story</h3>
-      <p>Simple Swahili in real context. No memorisation lists.</p>
+        <div class="feature-card fade-up">
+          <div class="feature-icon">🎧</div>
+          <div class="feature-title">Reading + Listening Practice</div>
+          <p class="feature-desc">Replay the audio as many times as needed. Build fluency and comprehension together, at your own pace.</p>
+        </div>
+
+        <div class="feature-card fade-up">
+          <div class="feature-icon">✏️</div>
+          <div class="feature-title">Exercises</div>
+          <p class="feature-desc">Two exercises per story to reinforce vocabulary and comprehension. Suitable for self-study and classroom use.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="step">
-      <h3>2. Listen to audio</h3>
-      <p>Train your ear with native pronunciation.</p>
+  <!-- ===========================
+       HOW IT WORKS
+       EDIT: step titles and descriptions
+  =========================== -->
+  <section class="how-it-works" id="how-it-works">
+    <div class="container">
+      <p class="section-heading fade-up" style="text-align:center;">How it works</p>
+      <p class="section-sub fade-up" style="text-align:center;">Three steps. One story at a time.</p>
+
+      <div class="steps">
+        <div class="step fade-up">
+          <div class="step-number">1</div>
+          <div class="step-title">Read the story</div>
+          <p class="step-desc">Read the short Swahili story at your own pace. Vocabulary is highlighted throughout.</p>
+        </div>
+
+        <div class="step fade-up">
+          <div class="step-number">2</div>
+          <div class="step-title">Listen while reading</div>
+          <p class="step-desc">Press play and follow along with the narration. Replay as many times as you need.</p>
+        </div>
+
+        <div class="step fade-up">
+          <div class="step-number">3</div>
+          <div class="step-title">Practice with exercises</div>
+          <p class="step-desc">Complete the exercises to reinforce what you've read and heard.</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div class="step">
-      <h3>3. Speak immediately</h3>
-      <p>Turn input into output using guided prompts.</p>
+  <!-- ===========================
+       PAYHIP — FULL RESOURCE
+       EDIT: Replace # with your Payhip product URL
+  =========================== -->
+  <section class="payhip" id="full-resource">
+    <div class="container">
+      <p class="section-heading fade-up">Ready for the full resource?</p>
+      <p class="fade-up">The complete Swahili reading and listening resource is available on Payhip. More stories, more audio, more exercises.</p>
+      <!-- EDIT: Replace # with your Payhip URL -->
+      <a href="#" class="btn btn-primary fade-up">Explore Full Resource →</a>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ===========================
+       CONTACT
+       EDIT: email and WhatsApp number
+  =========================== -->
+  <section class="contact">
+    <div class="container">
+      <div style="max-width:480px; margin:0 auto;">
+        <p class="section-heading fade-up" style="text-align:center;">Get in touch</p>
+        <p class="fade-up">For questions, collaborations, or teaching inquiries, feel free to reach out directly.</p>
 
-<section class="final">
-  <div class="wrap">
+        <div class="contact-links fade-up">
+          <!-- EDIT: Email address -->
+          <div class="contact-link">
+            <div class="contact-icon">✉️</div>
+            <a href="mailto:swahilitalklabinfo@gmail.com">swahilitalklabinfo@gmail.com</a>
+          </div>
 
-    <h2>Your first Swahili story is free</h2>
-    <p>Enter your email and get instant access</p>
+          <!-- EDIT: WhatsApp — no +, spaces, or dashes in the URL number -->
+          <div class="contact-link">
+            <div class="contact-icon">💬</div>
+            <a href="https://wa.me/254754828268" target="_blank" rel="noopener">+254 754 828 268</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <!-- MAILERLITE FORM -->
-    <div class="ml-embedded" data-form="WiJv8t"></div>
+  <!-- FOOTER -->
+  <footer>
+    <!-- EDIT: Year -->
+    <p>© 2025 SwahiliTalkLab. All rights reserved.</p>
+  </footer>
 
-  </div>
-</section>
+  <script>
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, i) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => entry.target.classList.add('visible'), i * 60);
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    fadeEls.forEach(el => observer.observe(el));
+  </script>
 
 </body>
 </html>
